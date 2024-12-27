@@ -1,5 +1,5 @@
-"""N glasses of capacity 1, ... , N . what is the minimun of glasses needed
-to pour K liters"""
+"""N glasses of capacity 1, ... , N . what is the minimum number of glasses needed
+to pour K liters."""
 
 
 # solution draft, does not work for all cases
