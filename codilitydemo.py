@@ -1,5 +1,6 @@
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
+""" Given an array A, write an algorithm to find the largest strictly positive integer that is not
+contained in the array."""
+
 from typing import List
 
 # only 1 out of 4 in performance tests, suboptimal solution
@@ -9,7 +10,7 @@ def solution(A: List[int]) -> int:
     max_A = max(A)
     if max_A < 0 :
         return 1
-    n = 1   
+    n = 1
     # gonna loop until maxA is reached, that can be a very large number
     while n <= max_A:
         if n not in A :
