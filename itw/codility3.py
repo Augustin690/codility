@@ -69,6 +69,15 @@ def solution_optim2(S):
 
     # binary representation contains useful info: if the last bit is 1, number is odd, if its 0, number is even.
     # Start from the rightmost bit and process the binary number directly
+
+    # for instance: '11010' = 26
+    # first step: bit is 0, so divide by 2 by removing the 0 --> '1101' = 13
+    # bit is 1, odd number, subtract 1 by turning bit to 0 --> '1100' = 12
+    # even number, we divide by 2 by removing 0 --> '110' = 6
+    # same --> '11' = 3
+    # --> '10' = 2
+    # --> '1' = 1
+    # --> '0' = 0 finished with 7 steps.
     while index >= 0:
         # even number
         if S[index] == '0':
@@ -83,7 +92,8 @@ def solution_optim2(S):
             if index == 0:
                 count += 1
                 break
-            # Case 2: Otherwise, we have an odd number. We subsract 1 by flipping the bit to 0, giving an even number.
+            # Case 2: Otherwise, we have an odd number. We subtract 1 by flipping the bit to 0, giving an even number.
+            # for instance: '111' = 7 --> '110' = 6
             while index >= 0 and S[index] == '1':
                 count += 1  # Subtract 1
                 S[index] = '0'
@@ -94,12 +104,12 @@ def solution_optim2(S):
 if __name__ == '__main__':
 
     # = "1110"
-    S = ''
+    S = '11010' # 26
 
     # test if implementation is memory efficient
-    for i in range(400000):
+    #for i in range(400000):
 
-        S += '1'
+    #    S += '1'
 
-    print(solution_optim(S))
+    print(solution_optim2(S))
     #print(solution(S))
