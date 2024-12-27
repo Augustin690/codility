@@ -9,7 +9,7 @@ def solution(A: List[int]) -> int:
     max_A = max(A)
     if max_A < 0 :
         return 1
-    n = 1
+    n = 1   
     # gonna loop until maxA is reached, that can be a very large number
     while n <= max_A:
         if n not in A :
